@@ -78,7 +78,7 @@ FileReadStream.prototype._read = function() {
     readStream.emit('error', reader.error);
   }
 
-  reader.readAsArrayBuffer(this._file.slice(startOffset, endOffset));
+  setTimeout(() => {reader.readAsArrayBuffer(this._file.slice(startOffset, endOffset));},0);
 };
 
 FileReadStream.prototype.destroy = function() {
